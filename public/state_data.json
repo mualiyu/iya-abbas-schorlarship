@@ -1,0 +1,116 @@
+{
+    "lga": [
+    {
+        "name": "Fufore",
+        "wards": [
+            "Wuro Bokki",
+            "Ribadu",
+            "Gurin",
+            "Fufore",
+            "Pariya",
+            "Farang",
+            "Fufore Mayo Ine",
+            "Karlahi",
+            "Yadim Uki-Tuki",
+            "Beti"
+        ]
+    },
+    {
+        "name": "Girei",
+        "wards": [
+            "Wuro Dole",
+            "Jera Bakari",
+            "Tombo",
+            "Jera Bakari",
+            "Girei II",
+            "Modire",
+            "Dakri",
+            "Damare",
+            "Goron",
+            "Girei I"
+        ]
+    },
+    {
+        "name": "Gombi",
+        "wards": [
+            "Gabun",
+            "Ga'anda",
+            "Tawa",
+            "G/North",
+            "Guyaku",
+            "Boga Dinga",
+            "Duwa",
+            "Garkida",
+            "Yang",
+            "G/South"
+        ]
+    },
+    {
+        "name": "Song",
+        "wards": [
+            "Kilage Funa",
+            "Sigire",
+            "Gudun Mboi",
+            "Dirma",
+            "Kilage Hirna",
+            "Sonng Waje",
+            "Waltadi",
+            "Suktu",
+            "Dumne",
+            "Song Gari",
+            "Zumo"
+        ]
+    },
+    {
+        "name": "Hong",
+        "wards": [
+            "Shangai",
+            "Banghika",
+            "Daksiri",
+            "Hong",
+            "Thilbang",
+            "Shangui",
+            "Huserizum",
+            "Gaya",
+            "Mayo Lope",
+            "Hildi",
+            "Uba",
+            "Garaha",
+            "Kwarhi"
+        ]
+    },
+    {
+        "name": "Yola North",
+        "wards": [
+            "Alkalawa",
+            "Doubeli",
+            "Nassarawo",
+            "Karewa",
+            "Rumde",
+            "Luggere",
+            "Limawa",
+            "Yelwa",
+            "Jambutu",
+            "Ajiya",
+            "Gwadabawa"
+        ]
+    },
+    {
+        "name": "Yola South",
+        "wards": [
+            "Makama B",
+            "Adarawo",
+            "Bako",
+            "Mbamoi",
+            "Toungo",
+            "Bole Yolde/P",
+            "Namtari",
+            "Nguroro",
+            "Yolde Kohi",
+            "Makama A",
+            "Mbamba"
+        ]
+    }
+]
+
+}
