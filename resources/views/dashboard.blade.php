@@ -12,11 +12,16 @@
                     {{ __('Welcome back ') . auth()->user()->name }}
                 </div>
                 <div class="p-6" style="right: 0;">
-
-                    <button
+                    <form method="POST" action="{{ route('admin.applications.export') }}">
+                        @csrf
+                        {{-- <input type="hidden" name="type" value="scholarship_applications">
+                        <input type="hidden" name="format" value="excel">
+                        <input type="hidden" name="fields" value="name,institution,course_of_study,level,local_government,ward"> --}}
+                    <button type="submit"
                         class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
                         Export applications to Excel
                     </button>
+                    </form>
                 </div>
             </div>
 

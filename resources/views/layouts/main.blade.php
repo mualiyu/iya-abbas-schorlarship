@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="{{asset('/assets/magnific-popup.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/fontawesome-all.min.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/odometer.min.css')}}">
-        <link rel="stylesheet" href="{{asset('/assets/nice-select.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('/assets/nice-select.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('/assets/meanmenu.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/swiper-bundle.min.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/main.css')}}">
@@ -31,12 +31,12 @@
      
     <body>
        <!-- sidebar-information-area-start -->
-        <div class="sidebar-info side-info">
+        {{-- <div class="sidebar-info side-info">
             <div class="sidebar-logo-wrapper mb-25">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-8">
                         <div class="sidebar-logo">
-                            <a href="/" style="font-size: 20px; color:black; text-decoration: none;" >Senator Aminu Iya Abbas Scholarship</a>
+                            <a href="/" style="font-size: 20px; color:white; text-decoration: none;" >Senator Aminu Iya Abbas</a>
                         </div>
                     </div>
                     <div class="col-xl-6 col-4">
@@ -49,7 +49,7 @@
             <div class="sidebar-menu-wrapper fix">
                 <div class="mobile-menu"></div>
             </div>
-        </div>
+        </div> --}}
         <div class="offcanvas-overlay"></div>
         <!-- sidebar-information-area-end -->
 
@@ -58,11 +58,11 @@
             <div class="h3_header-area header-sticky">
                 <div class="container">
                     <div class="row align-items-center">
-                        <div class="col-xl-5 col-sm-7 col-6">
+                        <div class="col-xl-5 col-sm-7 col-12">
                             <div class="h3_header-logo">
-                                <a href="/" style="font-size: 20px; color:black; text-decoration: none;">
+                                <a href="/" style="font-size: 20px; color:black; text-decoration: none; ">
                                     <img src="{{asset('/assets/main/logo.png')}}" alt="logo" style="width: 65px; height: 65px;">
-                                    Senator Aminu Iya Abbas Scholarship
+                                    <span class="font-size-10"> Senator Aminu Iya Abbas</span>
                                 </a>
                             </div>
                         </div>
@@ -79,13 +79,13 @@
                         <div class="col-xl-3 col-sm-5 col-6">
                             <div class="h3_header-right">
                                 <div class="h3_header-btn d-none d-sm-block">
-                                    <a href="/application" class="header-btn theme-btn theme-btn-medium theme-btn-3" style="text-decoration: none; background-color:rgb(104,12,13);">Apply Scholarship Now<i class="fa-light fa-arrow-up-right"></i></a>
+                                    <a href="/application" class="header-btn theme-btn theme-btn-medium theme-btn-3" style="text-decoration: none; background-color:rgb(104,12,13);">Apply for Scholarship Now<i class="fa-light fa-arrow-up-right"></i></a>
                                 </div>
-                                <div class="header-menu-bar d-xl-none ml-10">
+                                {{-- <div class="header-menu-bar d-xl-none ml-10">
                                     <span class="header-menu-bar-icon side-toggle">
                                         <i class="fa-light fa-bars"></i>
                                     </span>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
         <script src="{{asset('/assets/swiper-bundle.min.js')}}"></script>
         <script src="{{asset('/assets/jquery.meanmenu.min.js')}}"></script>
         <script src="{{asset('/assets/wow.min.js')}}"></script>
-        <script src="{{asset('/assets/jquery.nice-select.min.js')}}"></script>
+        {{-- <script src="{{asset('/assets/jquery.nice-select.min.js')}}"></script> --}}
         <script src="{{asset('/assets/jquery.scrollUp.min.js')}}"></script>
         <script src="{{asset('/assets/jquery.magnific-popup.min.js')}}"></script>
         <script src="{{asset('/assets/odometer.min.js')}}"></script>

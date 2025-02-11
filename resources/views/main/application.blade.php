@@ -32,8 +32,8 @@
         </div>
     @endif
 
-    <section class="h3_admission-area pt-50 pb-40">
-        <img src="/assets/main/scholar.webp" alt="" class="h3_admission-bg">
+    <section class="h3_admission-area pt-100 pb-150">
+        <img src="/assets/main/scholar.webp" alt="" class="h3_admission-bg pb-100">
         <img src="/assets/shape-1.png" alt="" class="h3_admission-shape-1">
         <img src="/assets/shape-3.png" alt="" class="h3_admission-shape-2">
         <div class="container">
@@ -55,9 +55,9 @@
                 </div>
                 <div class="h3_admission-content mb-10">
                     <div class="row">
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <span><i class="fa-regular fa-check"></i>Voter card</span>
-                        </div>
+                        </div> --}}
                         <div class="col-sm-6">
                             <span><i class="fa-regular fa-check"></i>Photocopy of Admission letter</span>
                         </div>
@@ -70,43 +70,46 @@
                         <div class="col-sm-6">
                             <span><i class="fa-regular fa-check"></i>Indigene letter</span>
                         </div>
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <span><i class="fa-regular fa-check"></i>SSCE</span>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="h3_admission-button">
-                    {{-- <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a>
-                        <div class="form-check mt-3"> --}}
-                    <input class="form-check-input" type="checkbox" id="agreement" required>
-                    <label class="form-check-label" for="agreement">
-                        I have read and agree to the terms and conditions.
-                    </label>
-                </div>
-                <div class="h3_admission-button mt-3">
-                    <button type="button" style=" background-color:rgb(104,12,13);"
-                        class="theme-btn theme-btn-medium theme-btn-3" onclick="showApplicationSection()">Continue</button>
-                </div>
+                    {{-- <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a> --}}
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" id="agreement" required>
+                        <label class="form-check-label" for="agreement">
+                            I have read and agree to the terms and conditions.
+                        </label>
+                    </div>
+                    <div class="h3_admission-button mt-3">
+                        <button type="button" style=" background-color:rgb(104,12,13);"
+                            class="theme-btn theme-btn-medium theme-btn-3"
+                            onclick="showApplicationSection()">Continue</button>
+                    </div>
 
-                <script>
-                    function showApplicationSection() {
-                        if (document.getElementById('agreement').checked) {
-                            document.getElementById('appliaction_section').style.display = 'block';
-                            window.location.hash = '#appliaction_section';
-                        } else {
-                            alert('You must agree to the terms and conditions before continuing.');
+                    <script>
+                        function showApplicationSection() {
+                            if (document.getElementById('agreement').checked) {
+                                document.getElementById('appliaction_section').style.display = 'block';
+                                window.location.hash = '#appliaction_section';
+                            } else {
+                                alert('You must agree to the terms and conditions before continuing.');
+                            }
                         }
-                    }
-                </script>
+                    </script>
+                </div>
             </div>
-        </div>
-        {{-- </div>
+            {{-- </div>
             </div> --}}
         </div>
     </section>
+    <section class="h3_admission-area pt-50 pb-50">
+    </section>
 
     <!-- Application area start -->
-    <section class="contact-area pt-120 pb-120" id="appliaction_section" style="display: none;">
+    <section class="contact-area pt-100 pb-100" id="appliaction_section" style="display: none;">
         <div class="container">
             <div class="contact-wrap">
                 <div class="row">
@@ -119,10 +122,10 @@
                                 <div class="row">
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="name">Full Name</label>
-                                            <input class="form-control" type="text" id="name" name="name"
-                                                required>
-                                            <span class="inner-icon"><i class="fa-thin fa-user"></i></span>
+                                            <label for="name">Full Name <span style="color: red;">*</span></label>
+                                            <input class="form-input mb-30 mt-10" type="text" id="name"
+                                                name="name" value="{{ old('name') }}" required>
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-user"></i></span> --}}
                                             @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -130,12 +133,13 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input">
-                                            <label for="gender">Gender</label>
-                                            <select id="gender" name="gender"
-                                                class="contact-form-list has-nice-select mb-30" required>
+                                            <label for="gender">Gender <span style="color: red;">*</span></label>
+                                            <select id="gender" name="gender" class="form-select mb-30 mt-10" required>
                                                 <option value="">Select Gender</option>
-                                                <option value="male">Male</option>
-                                                <option value="female">Female</option>
+                                                <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male
+                                                </option>
+                                                <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>
+                                                    Female</option>
                                             </select>
                                             @error('gender')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -144,21 +148,41 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="institution">Institution Name</label>
-                                            <input class="form-control" type="text" id="institution" name="institution"
-                                                required>
-                                            <span class="inner-icon"><i class="fa-thin fa-building"></i></span>
+                                            <label for="institution">Institution <span style="color: red;">*</span></label>
+                                            <select id="institution" name="institution" class="form-select mb-30" required>
+                                                <option value="">Select institution</option>
+                                            </select>
+
+                                            {{-- <input class="form-control" type="text" id="institution" name="institution" value="{{ old('institution') }}" required> --}}
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-building"></i></span> --}}
                                             @error('institution')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
+
+                                            <script>
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    fetch('{{ url('/nigerian-university.json') }}')
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            const institutionSelect = document.getElementById('institution');
+                                                            data.forEach(university => {
+                                                                const option = document.createElement('option');
+                                                                option.value = university.name;
+                                                                option.textContent = university.name;
+                                                                institutionSelect.appendChild(option);
+                                                            });
+                                                        })
+                                                        .catch(error => console.error('Error fetching universities:', error));
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="registration_no">Registration Number</label>
+                                            <label for="registration_no">Registration Number <span style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="registration_no"
-                                                name="registration_no" required>
-                                            <span class="inner-icon"><i class="fa-thin fa-id-card"></i></span>
+                                                name="registration_no" value="{{ old('registration_no') }}" required>
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-id-card"></i></span> --}}
                                             @error('registration_no')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -166,9 +190,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="course_of_study">Course of Study</label>
+                                            <label for="course_of_study">Course of Study <span style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="course_of_study"
-                                                name="course_of_study" required>
+                                                name="course_of_study" value="{{ old('course_of_study') }}" required>
                                             @error('course_of_study')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -176,9 +200,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="duration">Course Duration (Years)</label>
+                                            <label for="duration">Course Duration (Years) <span style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="duration" name="duration"
-                                                required>
+                                                value="{{ old('duration') }}" required>
                                             @error('duration')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -186,9 +210,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="level">Current Level</label>
+                                            <label for="level">Current Level <span style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="level" name="level"
-                                                required>
+                                                value="{{ old('level') }}" required>
                                             @error('level')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -196,9 +220,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="year_of_admission">Year of Admission</label>
+                                            <label for="year_of_admission">Year of Admission <span style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="year_of_admission"
-                                                name="year_of_admission" required>
+                                                name="year_of_admission" value="{{ old('year_of_admission') }}" required>
                                             @error('year_of_admission')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -206,10 +230,10 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="date_of_birth">Date of Birth</label>
+                                            <label for="date_of_birth">Date of Birth <span style="color: red;">*</span></label>
                                             <input class="form-control" type="date" id="date_of_birth"
-                                                name="date_of_birth" required>
-                                            <span class="inner-icon"><i class="fa-thin fa-calendar"></i></span>
+                                                name="date_of_birth" value="{{ old('date_of_birth') }}" required>
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-calendar"></i></span> --}}
                                             @error('date_of_birth')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -217,12 +241,16 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input">
-                                            <label for="marital_status">Marital Status</label>
-                                            <select id="marital_status" name="marital_status"
-                                                class="contact-form-list has-nice-select mb-30" required>
+                                            <label for="marital_status">Marital Status <span style="color: red;">*</span></label>
+                                            <select id="marital_status" name="marital_status" class="form-select mb-30"
+                                                required>
                                                 <option value="">Select Status</option>
-                                                <option value="single">Single</option>
-                                                <option value="married">Married</option>
+                                                <option value="single"
+                                                    {{ old('marital_status') == 'single' ? 'selected' : '' }}>Single
+                                                </option>
+                                                <option value="married"
+                                                    {{ old('marital_status') == 'married' ? 'selected' : '' }}>Married
+                                                </option>
                                             </select>
                                             @error('marital_status')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -231,8 +259,8 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="contact-form-input mb-30">
-                                            <label for="permanent_address">Permanent Address</label>
-                                            <textarea class="form-control" name="permanent_address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <label for="permanent_address">Permanent Address <span style="color: red;">*</span></label>
+                                            <textarea class="form-control" name="permanent_address" id="exampleFormControlTextarea1" rows="3">{{ old('permanent_address') }}</textarea>
                                             @error('permanent_address')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -240,9 +268,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="bank_name">Bank Name</label>
+                                            <label for="bank_name">Bank Name <span style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="bank_name" name="bank_name"
-                                                required>
+                                                value="{{ old('bank_name') }}" required>
                                             @error('bank_name')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -250,9 +278,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="account_number">Account Number</label>
-                                            <input class="form-control" type="text" id="account_number"
-                                                name="account_number" required>
+                                            <label for="account_number">Account Number <span style="color: red;">*</span></label>
+                                            <input class="form-control" type="number" id="account_number"
+                                                name="account_number" value="{{ old('account_number') }}" required>
                                             @error('account_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -260,10 +288,10 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="gsm_number">Phone Number</label>
-                                            <input class="form-control" type="tel" id="gsm_number" name="gsm_number"
-                                                required>
-                                            <span class="inner-icon"><i class="fa-thin fa-phone"></i></span>
+                                            <label for="gsm_number">Phone Number <span style="color: red;">*</span></label>
+                                            <input class="form-control" type="number" id="gsm_number" name="gsm_number"
+                                                value="{{ old('gsm_number') }}" required>
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-phone"></i></span> --}}
                                             @error('gsm_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -271,10 +299,10 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="email">Email Address</label>
+                                            <label for="email">Email Address <span style="color: red;">*</span></label>
                                             <input class="form-control" type="email" id="email" name="email"
-                                                required>
-                                            <span class="inner-icon"><i class="fa-thin fa-envelope"></i></span>
+                                                value="{{ old('email') }}" required>
+                                            {{-- <span class="inner-icon"><i class="fa-thin fa-envelope"></i></span> --}}
                                             @error('email')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -283,18 +311,29 @@
 
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="local_government">Local Government</label>
+                                            <label for="local_government">Local Government <span style="color: red;">*</span></label>
                                             <select id="local_government" name="local_government"
-                                                class="contact-form-list has-nice-select mb-30" required
-                                                onchange="updateWards(this.value);">
+                                                class="form-select mb-30" required onchange="updateWards(this.value);">
                                                 <option value="">Select Local Government</option>
-                                                <option value="Fufore">Fufore</option>
-                                                <option value="Girei">Girei</option>
-                                                <option value="Gombi">Gombi</option>
-                                                <option value="Song">Song</option>
-                                                <option value="Hong">Hong</option>
-                                                <option value="Yola North">Yola North</option>
-                                                <option value="Yola South">Yola South</option>
+                                                <option value="Fufore"
+                                                    {{ old('local_government') == 'Fufore' ? 'selected' : '' }}>Fufore
+                                                </option>
+                                                <option value="Girei"
+                                                    {{ old('local_government') == 'Girei' ? 'selected' : '' }}>Girei
+                                                </option>
+                                                <option value="Gombi"
+                                                    {{ old('local_government') == 'Gombi' ? 'selected' : '' }}>Gombi
+                                                </option>
+                                                <option value="Song"
+                                                    {{ old('local_government') == 'Song' ? 'selected' : '' }}>Song</option>
+                                                <option value="Hong"
+                                                    {{ old('local_government') == 'Hong' ? 'selected' : '' }}>Hong</option>
+                                                <option value="Yola North"
+                                                    {{ old('local_government') == 'Yola North' ? 'selected' : '' }}>Yola
+                                                    North</option>
+                                                <option value="Yola South"
+                                                    {{ old('local_government') == 'Yola South' ? 'selected' : '' }}>Yola
+                                                    South</option>
                                             </select>
                                             @error('local_government')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -304,9 +343,9 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="ward">Ward</label>
-                                            <select id="ward" name="ward"
-                                                class="contact-form-list has-nice-select mb-30">
+                                            <label for="wardss"> <span style="color: red;">*</span></label>
+                                            <select id="wardss" name="ward" class="form-select mb-30"
+                                                aria-label="Default select example">
                                                 {{-- <option value="">Select Ward</option> --}}
                                             </select>
                                             <script>
@@ -335,46 +374,26 @@
                                                         ]
                                                     };
 
-                                                    var wardSelect = document.getElementById("ward");
+                                                    var wardSelect = document.getElementById("wardss");
+
                                                     wardSelect.innerHTML = '<option value="">Select Ward</option>'; // Clear existing options
 
                                                     var wardd = lgaWards[selectedLGA];
                                                     if (selectedLGA in lgaWards) {
-                                                        lgaWards[selectedLGA].forEach(function(ward) {
-                                                            console.log(ward);
-                                                            wardSelect.innerHTML =  wardSelect.innerHTML + '<option value="'+ward+'">'+ward+'</option>';
-                                                            
-                                                        });
+                                                        console.log(wardd);
+                                                        for (var i = 0; i < wardd.length; i++) {
+                                                            var ward = wardd[i];
+                                                            wardSelect.innerHTML = wardSelect.innerHTML + '<option value="' + ward + '">' + ward +
+                                                                '</option>';
+                                                        }
+                                                        // lgaWards[selectedLGA].forEach(function(ward) {
+                                                        //     wardSelect.innerHTML =  wardSelect.innerHTML + '<option value="'+ward+'">'+ward+'</option>';
+
+                                                        // });
+
                                                     }
                                                 }
                                             </script>
-                                            {{-- <script>
-                                            function updateWards(selectedLGA) {
-                                                var lgaWards = {
-                                                    "Fufore": ["Wuro Bokki", "Ribadu", "Gurin", "Fufore", "Pariya", "Farang", "Fufore Mayo Ine", "Karlahi", "Yadim Uki-Tuki", "Beti"],
-                                                    "Girei": ["Wuro Dole", "Jera Bakari", "Tombo", "Jera Bakari", "Girei II", "Modire", "Dakri", "Damare", "Goron", "Girei I"],
-                                                    "Gombi": ["Gabun", "Ga'anda", "Tawa", "G/North", "Guyaku", "Boga Dinga", "Duwa", "Garkida", "Yang", "G/South"],
-                                                    "Song": ["Kilage Funa", "Sigire", "Gudun Mboi", "Dirma", "Kilage Hirna", "Sonng Waje", "Waltadi", "Suktu", "Dumne", "Song Gari", "Zumo"],
-                                                    "Hong": ["Shangai", "Banghika", "Daksiri", "Hong", "Thilbang", "Shangui", "Huserizum", "Gaya", "Mayo Lope", "Hildi", "Uba", "Garaha", "Kwarhi"],
-                                                    "Yola North": ["Alkalawa", "Doubeli", "Nassarawo", "Karewa", "Rumde", "Luggere", "Limawa", "Yelwa", "Jambutu", "Ajiya", "Gwadabawa"],
-                                                    "Yola South": ["Makama B", "Adarawo", "Bako", "Mbamoi", "Toungo", "Bole Yolde/P", "Namtari", "Nguroro", "Yolde Kohi", "Makama A", "Mbamba"]
-                                                };
-
-                                                console.log(lgaWards);
-
-                                                var wardSelect = $('#ward');
-                                                wardSelect.empty().append('<option value="">Select Ward</option>');
-
-                                                if (selectedLGA in lgaWards) {
-                                                    $.each(lgaWards[selectedLGA], function(index, ward) {
-                                                        wardSelect.append($('<option>', {
-                                                            value: ward,
-                                                            text: ward
-                                                        }));
-                                                    });
-                                                }
-                                            }
-                                        </script> --}}
                                             @error('ward')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -385,87 +404,87 @@
                                     <div class="col-12">
                                         <h4 class="mb-3 mt-4">Required Documents</h4>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="voter_card">Voter Card</label>
-                                            <input type="file" class="form-control form-control-lg" id="voter_card"
-                                                name="voter_card" accept="image/*" required onchange="previewFile(this)">
                                             <img id="voter_card_preview" src="" alt="Voter Card Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="voter_card">Voter Card</label>
+                                            <input type="file" class="form-control form-control-sm" id="voter_card"
+                                                name="voter_card" accept="image/*" required onchange="previewFile(this)">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="admission_letter">Admission Letter</label>
-                                            <input type="file" class="form-control form-control-lg"
-                                                id="admission_letter" name="admission_letter" accept="image/*" required
-                                                onchange="previewFile(this)">
                                             <img id="admission_letter_preview" src=""
                                                 alt="Admission Letter Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="admission_letter">Admission Letter <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm"
+                                                id="admission_letter" name="admission_letter" accept="image/*" required
+                                                onchange="previewFile(this)">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="last_semester_result">Last Semester Result</label>
-                                            <input type="file" class="form-control form-control-lg"
-                                                id="last_semester_result" name="last_semester_result" accept="image/*"
-                                                required onchange="previewFile(this)">
                                             <img id="last_semester_result_preview" src=""
                                                 alt="Last Semester Result Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="last_semester_result">Last Semester Result <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm"
+                                                id="last_semester_result" name="last_semester_result" accept="image/*"
+                                                required onchange="previewFile(this)">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="registration_receipt">Registration Receipt</label>
-                                            <input type="file" class="form-control form-control-lg"
-                                                id="registration_receipt" name="registration_receipt" accept="image/*"
-                                                required onchange="previewFile(this)">
                                             <img id="registration_receipt_preview" src=""
                                                 alt="Registration Receipt Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="registration_receipt">Registration Receipt <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm"
+                                                id="registration_receipt" name="registration_receipt" accept="image/*"
+                                                required onchange="previewFile(this)">
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="indigene_letter">Indigene Letter</label>
-                                            <input type="file" class="form-control form-control-lg"
-                                                id="indigene_letter" name="indigene_letter" accept="image/*" required
-                                                onchange="previewFile(this)">
                                             <img id="indigene_letter_preview" src=""
                                                 alt="Indigene Letter Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="indigene_letter">Indigene Letter <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm"
+                                                id="indigene_letter" name="indigene_letter" accept="image/*" required
+                                                onchange="previewFile(this)">
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="ssce">SSCE Result</label>
-                                            <input type="file" class="form-control form-control-lg" id="ssce"
-                                                name="ssce" accept="image/*" required onchange="previewFile(this)">
                                             <img id="ssce_preview" src="" alt="SSCE Result Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="ssce">SSCE Result <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm" id="ssce"
+                                                name="ssce" accept="image/*" required onchange="previewFile(this)">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="passport_photo">Passport Photo</label>
-                                            <input type="file" class="form-control form-control-lg"
-                                                id="passport_photo" name="passport_photo" accept="image/*" required
-                                                onchange="previewFile(this)">
                                             <img id="passport_photo_preview" src="" alt="Passport Photo Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="passport_photo">Passport Photo <span style="color: red;">*</span></label>
+                                            <input type="file" class="form-control form-control-sm"
+                                                id="passport_photo" name="passport_photo" accept="image/*" required
+                                                onchange="previewFile(this)">
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
-                                            <label for="signature">Signature</label>
-                                            <input type="file" class="form-control form-control-lg" id="signature"
-                                                name="signature" accept="image/*" required onchange="previewFile(this)">
                                             <img id="signature_preview" src="" alt="Signature Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
+                                            <label for="signature">Signature</label>
+                                            <input type="file" class="form-control form-control-sm" id="signature"
+                                                name="signature" accept="image/*" required onchange="previewFile(this)">
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <script>
                                         function previewFile(input) {
                                             var file = input.files[0];
