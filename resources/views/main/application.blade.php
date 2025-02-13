@@ -149,9 +149,10 @@
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
                                             <label for="institution">Institution <span style="color: red;">*</span></label>
-                                            <select id="institution" name="institution" class="form-select mb-30" required>
+                                            <select id="institution" onchange="updateOUNI(this.value);" name="institution" class="form-select mb-30" required>
                                                 <option value="">Select institution</option>
                                             </select>
+                                            <span id="otherss"></span>
 
                                             {{-- <input class="form-control" type="text" id="institution" name="institution" value="{{ old('institution') }}" required> --}}
                                             {{-- <span class="inner-icon"><i class="fa-thin fa-building"></i></span> --}}
@@ -171,15 +172,32 @@
                                                                 option.textContent = university.name;
                                                                 institutionSelect.appendChild(option);
                                                             });
+
+                                                            const option = document.createElement('option');
+                                                            option.value = "Others";
+                                                            option.textContent = "Others";
+                                                            institutionSelect.appendChild(option);
                                                         })
                                                         .catch(error => console.error('Error fetching universities:', error));
                                                 });
+
+                                                function updateOUNI(selectedUNI) {
+
+                                                    var othersSelect = document.getElementById("otherss");
+                                                
+                                                    if (selectedUNI === "Others") {
+                                                        othersSelect.innerHTML = '<input class="form-control" type="text" placeholder="Please enter the name of your institution" id="institution" name="institution_o" value="" required>';                                                      
+                                                    }else{
+                                                        othersSelect.innerHTML = '';
+                                                    }
+                                                }
                                             </script>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="registration_no">Registration Number <span style="color: red;">*</span></label>
+                                            <label for="registration_no">Registration Number <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="registration_no"
                                                 name="registration_no" value="{{ old('registration_no') }}" required>
                                             {{-- <span class="inner-icon"><i class="fa-thin fa-id-card"></i></span> --}}
@@ -190,7 +208,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="course_of_study">Course of Study <span style="color: red;">*</span></label>
+                                            <label for="course_of_study">Course of Study <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="text" id="course_of_study"
                                                 name="course_of_study" value="{{ old('course_of_study') }}" required>
                                             @error('course_of_study')
@@ -200,7 +219,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="duration">Course Duration (Years) <span style="color: red;">*</span></label>
+                                            <label for="duration">Course Duration (Years) <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="duration" name="duration"
                                                 value="{{ old('duration') }}" required>
                                             @error('duration')
@@ -220,7 +240,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="year_of_admission">Year of Admission <span style="color: red;">*</span></label>
+                                            <label for="year_of_admission">Year of Admission <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="year_of_admission"
                                                 name="year_of_admission" value="{{ old('year_of_admission') }}" required>
                                             @error('year_of_admission')
@@ -230,7 +251,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="date_of_birth">Date of Birth <span style="color: red;">*</span></label>
+                                            <label for="date_of_birth">Date of Birth <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="date" id="date_of_birth"
                                                 name="date_of_birth" value="{{ old('date_of_birth') }}" required>
                                             {{-- <span class="inner-icon"><i class="fa-thin fa-calendar"></i></span> --}}
@@ -241,7 +263,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input">
-                                            <label for="marital_status">Marital Status <span style="color: red;">*</span></label>
+                                            <label for="marital_status">Marital Status <span
+                                                    style="color: red;">*</span></label>
                                             <select id="marital_status" name="marital_status" class="form-select mb-30"
                                                 required>
                                                 <option value="">Select Status</option>
@@ -259,7 +282,8 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="contact-form-input mb-30">
-                                            <label for="permanent_address">Permanent Address <span style="color: red;">*</span></label>
+                                            <label for="permanent_address">Permanent Address <span
+                                                    style="color: red;">*</span></label>
                                             <textarea class="form-control" name="permanent_address" id="exampleFormControlTextarea1" rows="3">{{ old('permanent_address') }}</textarea>
                                             @error('permanent_address')
                                                 <span class="text-danger">{{ $message }}</span>
@@ -278,7 +302,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="account_number">Account Number <span style="color: red;">*</span></label>
+                                            <label for="account_number">Account Number <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="account_number"
                                                 name="account_number" value="{{ old('account_number') }}" required>
                                             @error('account_number')
@@ -288,7 +313,8 @@
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="gsm_number">Phone Number <span style="color: red;">*</span></label>
+                                            <label for="gsm_number">Phone Number <span
+                                                    style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="gsm_number" name="gsm_number"
                                                 value="{{ old('gsm_number') }}" required>
                                             {{-- <span class="inner-icon"><i class="fa-thin fa-phone"></i></span> --}}
@@ -311,7 +337,8 @@
 
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
-                                            <label for="local_government">Local Government <span style="color: red;">*</span></label>
+                                            <label for="local_government">Local Government <span
+                                                    style="color: red;">*</span></label>
                                             <select id="local_government" name="local_government"
                                                 class="form-select mb-30" required onchange="updateWards(this.value);">
                                                 <option value="">Select Local Government</option>
@@ -418,7 +445,8 @@
                                             <img id="admission_letter_preview" src=""
                                                 alt="Admission Letter Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="admission_letter">Admission Letter <span style="color: red;">*</span></label>
+                                            <label for="admission_letter">Admission Letter <span
+                                                    style="color: red;">*</span></label>
                                             <input type="file" class="form-control form-control-sm"
                                                 id="admission_letter" name="admission_letter" accept="image/*" required
                                                 onchange="previewFile(this)">
@@ -429,7 +457,8 @@
                                             <img id="last_semester_result_preview" src=""
                                                 alt="Last Semester Result Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="last_semester_result">Last Semester Result <span style="color: red;">*</span></label>
+                                            <label for="last_semester_result">Last Semester Result <span
+                                                    style="color: red;">*</span></label>
                                             <input type="file" class="form-control form-control-sm"
                                                 id="last_semester_result" name="last_semester_result" accept="image/*"
                                                 required onchange="previewFile(this)">
@@ -440,7 +469,8 @@
                                             <img id="registration_receipt_preview" src=""
                                                 alt="Registration Receipt Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="registration_receipt">Registration Receipt <span style="color: red;">*</span></label>
+                                            <label for="registration_receipt">Registration Receipt <span
+                                                    style="color: red;">*</span></label>
                                             <input type="file" class="form-control form-control-sm"
                                                 id="registration_receipt" name="registration_receipt" accept="image/*"
                                                 required onchange="previewFile(this)">
@@ -451,7 +481,8 @@
                                             <img id="indigene_letter_preview" src=""
                                                 alt="Indigene Letter Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="indigene_letter">Indigene Letter <span style="color: red;">*</span></label>
+                                            <label for="indigene_letter">Indigene Letter <span
+                                                    style="color: red;">*</span></label>
                                             <input type="file" class="form-control form-control-sm"
                                                 id="indigene_letter" name="indigene_letter" accept="image/*" required
                                                 onchange="previewFile(this)">
@@ -470,7 +501,8 @@
                                         <div class="mb-30">
                                             <img id="passport_photo_preview" src="" alt="Passport Photo Preview"
                                                 style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="passport_photo">Passport Photo <span style="color: red;">*</span></label>
+                                            <label for="passport_photo">Passport Photo <span
+                                                    style="color: red;">*</span></label>
                                             <input type="file" class="form-control form-control-sm"
                                                 id="passport_photo" name="passport_photo" accept="image/*" required
                                                 onchange="previewFile(this)">

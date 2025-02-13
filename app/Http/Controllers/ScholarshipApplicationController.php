@@ -17,6 +17,7 @@ class ScholarshipApplicationController extends Controller
             'name' => 'required|string|max:255',
             'gender' => 'required|in:male,female',
             'institution' => 'required|string|max:255',
+            'institution_o' => 'nullable|string|max:255',
             'registration_no' => 'required|string|max:255',
             'course_of_study' => 'required|string|max:255',
             'duration' => 'required|integer',
@@ -46,6 +47,12 @@ class ScholarshipApplicationController extends Controller
             return redirect()->back()
                 ->withErrors($validator)
                 ->withInput();
+        }
+
+
+        if ($request->institution == "Others") {
+            
+            $request->institution = $request->institution_o;
         }
 
         // Handle file uploads

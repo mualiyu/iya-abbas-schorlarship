@@ -1,86 +1,38 @@
 [
     {
-        "name": "Abubakar Tafawa Balewa University, Bauchi",
-        "vice_chancellor": "Professor M A Abdulazeez",
-        "year_of_establishment": "1988",
-        "type": "Federal",
-        "url": "https://www.atbu.edu.ng"
+        "name": "Modibbo Adama University, Yola (MAU)"
     },
     {
-        "name": "Federal University Gashua, Yobe",
-        "vice_chancellor": "Prof. Maimuna Waziri",
-        "year_of_establishment": "2013",
-        "type": "Federal",
-        "url": "https://www.fugashua.edu.ng"
+        "name": "Adamawa State University, Mubi (ADSU)"
     },
     {
-        "name": "Modibbo Adama University, Yola",
-        "vice_chancellor": "Prof. Abdullahi Liman Tukur",
-        "year_of_establishment": "1981",
-        "type": "Federal",
-        "url": "https://www.mau.edu.ng"
+        "name": "Adamawa State Polytechnic, Yola/Numan"
     },
     {
-        "name": "University of Maiduguri, Borno",
-        "vice_chancellor": "Prof. Aliyu Shugaba",
-        "year_of_establishment": "1975",
-        "type": "Federal",
-        "url": "https://www.unimaid.edu.ng"
+        "name": "College for Legal Studies, Yola"
     },
     {
-        "name": "Federal University Kashere, Gombe",
-        "vice_chancellor": "Prof. Umaru Pate",
-        "year_of_establishment": "2011",
-        "type": "Federal",
-        "url": "https://www.fukashere.edu.ng"
+        "name": "College of Education, Hong"
     },
     {
-        "name": "Federal University Wukari, Taraba",
-        "vice_chancellor": "Prof. Jude Rabo",
-        "year_of_establishment": "2011",
-        "type": "Federal",
-        "url": "https://www.fuwukari.edu.ng"
+        "name": "Federal College of Education, Yola"
     },
     {
-        "name": "Bauchi State University, Gadau",
-        "vice_chancellor": "Prof. Auwalu Uba",
-        "year_of_establishment": "2011",
-        "type": "State",
-        "url": "https://www.basug.edu.ng"
+        "name": "Federal Polytechnic, Mubi/Yola"
     },
     {
-        "name": "Yobe State University, Damaturu",
-        "vice_chancellor": "Prof. Mala Daura",
-        "year_of_establishment": "2006",
-        "type": "State",
-        "url": "https://www.ysu.edu.ng"
+        "name": "College for Nursing and Midwifery, Yola"
     },
     {
-        "name": "Taraba State University, Jalingo",
-        "vice_chancellor": "Prof. Sunday Bako",
-        "year_of_establishment": "2008",
-        "type": "State",
-        "url": "https://www.tsuniversity.edu.ng"
+        "name": "College for Health, Science and Technology, Michika"
     },
     {
-        "name": "Gombe State University, Gombe",
-        "vice_chancellor": "Prof. Aliyu Usman El-Nafaty",
-        "year_of_establishment": "2004",
-        "type": "State",
-        "url": "https://www.gsu.edu.ng"
+        "name": "College of Agriculture, Ganye"
     },
     {
-        "name": "Borno State University, Maiduguri",
-        "vice_chancellor": "Prof. Umar Kyari Sandabe",
-        "year_of_establishment": "2016",
-        "type": "State",
-        "url": "https://www.bosu.edu.ng"
+        "name": "Taraba State University, Jalingo"
     },
     {
-        "name": "Adamawa State University, Mubi",
-        "vice_chancellor": "Prof. Kaletapwa G. Farauta",
-        "year_of_establishment": "2002",
-        "type": "State",
-        "url": "https://www.adsu.edu.ng"
+        "name": "University of Maiduguri"
     }
 ]
