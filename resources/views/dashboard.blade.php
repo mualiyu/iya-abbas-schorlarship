@@ -4,6 +4,15 @@
             {{ __('Admin Dashboard') }}
         </h2>
     </x-slot>
+    @if (session('error'))
+        <div class="py-0">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <span class="block sm:inline text-red-900" style="color: red;">{{ session('error') }}</span>
+                </div>
+            </div>
+        </div>
+    @endif
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -17,10 +26,47 @@
                         {{-- <input type="hidden" name="type" value="scholarship_applications">
                         <input type="hidden" name="format" value="excel">
                         <input type="hidden" name="fields" value="name,institution,course_of_study,level,local_government,ward"> --}}
-                    <button type="submit"
-                        class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
-                        Export applications to Excel
-                    </button>
+                        <button type="submit"
+                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Export applications to Excel
+                        </button>
+                    </form>
+                </div>
+
+                <div class="p-6" style="right: 0;">
+                    <form method="POST" action="{{ route('admin.applications.download.zip') }}">
+                        @csrf
+                        {{-- <input type="hidden" name="type" value="scholarship_applications">
+                        <input type="hidden" name="format" value="excel">
+                        <input type="hidden" name="fields" value="name,institution,course_of_study,level,local_government,ward"> --}}
+                        <button type="submit"
+                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Download Zip
+                        </button>
+                    </form>
+                </div>
+
+                <div class="p-6" style="right: 0;">
+                    <form method="POST" action="{{ route('admin.applications.activate') }}">
+                        @csrf
+
+                        @if (config('app.application'))
+                            <input type="hidden" name="isActive" value="0">
+                        @else
+                            <input type="hidden" name="isActive" value="1">
+                        @endif
+
+                        @if (config('app.application'))
+                            <button type="submit"
+                                class="bg-grey-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                Deactivate
+                            </button>
+                        @else
+                            <button type="submit"
+                                class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                Activate
+                            </button>
+                        @endif
                     </form>
                 </div>
             </div>
@@ -29,7 +75,7 @@
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr> 
+                        <tr>
                             <th scope="col" class="px-6 py-3">Name</th>
                             <th scope="col" class="px-6 py-3">Institution</th>
                             <th scope="col" class="px-6 py-3">Course</th>

@@ -78,15 +78,18 @@
                 <div class="h3_admission-button">
                     {{-- <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a> --}}
                     <div class="form-check mt-3">
-                        <input class="form-check-input" type="checkbox" id="agreement" required>
+                        <input class="form-check-input" type="checkbox" id="agreement"
+                            {{ config('app.application') ? '' : 'disabled' }} required>
                         <label class="form-check-label" for="agreement">
                             I have read and agree to the terms and conditions.
                         </label>
                     </div>
                     <div class="h3_admission-button mt-3">
                         <button type="button" style=" background-color:rgb(104,12,13);"
-                            class="theme-btn theme-btn-medium theme-btn-3"
-                            onclick="showApplicationSection()">Continue</button>
+                            class="theme-btn theme-btn-medium theme-btn-3" onclick="showApplicationSection()"
+                            {{ config('app.application') ? '' : 'disabled' }}>
+                            Continue
+                        </button>
                     </div>
 
                     <script>
@@ -108,6 +111,7 @@
     <section class="h3_admission-area pt-50 pb-50">
     </section>
 
+    @if (config('app.application'))
     <!-- Application area start -->
     <section class="contact-area pt-100 pb-100" id="appliaction_section" style="display: none;">
         <div class="container">
@@ -149,7 +153,8 @@
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="contact-form-input mb-30">
                                             <label for="institution">Institution <span style="color: red;">*</span></label>
-                                            <select id="institution" onchange="updateOUNI(this.value);" name="institution" class="form-select mb-30" required>
+                                            <select id="institution" onchange="updateOUNI(this.value);" name="institution"
+                                                class="form-select mb-30" required>
                                                 <option value="">Select institution</option>
                                             </select>
                                             <span id="otherss"></span>
@@ -184,10 +189,11 @@
                                                 function updateOUNI(selectedUNI) {
 
                                                     var othersSelect = document.getElementById("otherss");
-                                                
+
                                                     if (selectedUNI === "Others") {
-                                                        othersSelect.innerHTML = '<input class="form-control" type="text" placeholder="Please enter the name of your institution" id="institution" name="institution_o" value="" required>';                                                      
-                                                    }else{
+                                                        othersSelect.innerHTML =
+                                                            '<input class="form-control" type="text" placeholder="Please enter the name of your institution" id="institution" name="institution_o" value="" required>';
+                                                    } else {
                                                         othersSelect.innerHTML = '';
                                                     }
                                                 }
@@ -553,4 +559,5 @@
         </div>
     </section>
     <!-- Application area end -->
+    @endif
 @endsection

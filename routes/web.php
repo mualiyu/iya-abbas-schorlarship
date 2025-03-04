@@ -27,6 +27,9 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::get('/applications', [ScholarshipApplicationController::class, 'index'])->name('applications.index');
     Route::get('/applications/{application}', [ScholarshipApplicationController::class, 'show'])->name('applications.show');
     Route::post('/applications/export', [ScholarshipApplicationController::class, 'export'])->name('applications.export');
+
+    Route::post('/applications/download/zip', [HomeController::class, 'downloadApplicationDocuments'])->name('applications.download.zip');
+    Route::post('/applications/activate', [HomeController::class, 'activateApplication'])->name('applications.activate');
 });
 
 require __DIR__ . '/auth.php';
