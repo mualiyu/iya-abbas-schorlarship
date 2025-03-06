@@ -32,6 +32,12 @@
         </div>
     @endif
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            {{ $errors->first() }}
+        </div>
+    @endif
+
     <section class="h3_admission-area pt-100 pb-150">
         <img src="/assets/main/scholar.webp" alt="" class="h3_admission-bg pb-100">
         <img src="/assets/shape-1.png" alt="" class="h3_admission-shape-1">
