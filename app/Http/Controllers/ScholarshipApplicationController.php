@@ -13,6 +13,8 @@ class ScholarshipApplicationController extends Controller
 {
     public function store(Request $request) 
     {
+        // return $request->all();
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'gender' => 'required|in:male,female',
@@ -56,24 +58,24 @@ class ScholarshipApplicationController extends Controller
         }
 
         // Handle file uploads
-        $fileFields = [
-            // 'voter_card',
-            'admission_letter',
-            'last_semester_result',
-            'registration_receipt',
-            'indigene_letter',
-            // 'ssce',
-            'passport_photo',
-            // 'signature'
-        ];
+        // $fileFields = [
+        //     // 'voter_card',
+        //     'admission_letter',
+        //     'last_semester_result',
+        //     'registration_receipt',
+        //     'indigene_letter',
+        //     // 'ssce',
+        //     'passport_photo',
+        //     // 'signature'
+        // ];
 
-        foreach ($fileFields as $field) {
-            if ($request->hasFile($field)) {
-                $fileName = time() . '_' . $field . '.' . $request->file($field)->getClientOriginalExtension();
-                $filePath = $request->file($field)->storeAs('public/applications', $fileName);
-                $request->$field = $fileName;
-            }
-        }
+        // foreach ($fileFields as $field) {
+        //     if ($request->hasFile($field)) {
+        //         $fileName = time() . '_' . $field . '.' . $request->file($field)->getClientOriginalExtension();
+        //         $filePath = $request->file($field)->storeAs('public/applications', $fileName);
+        //         $request->$field = $fileName;
+        //     }
+        // }
 
         // try {
             // Create the scholarship application

@@ -446,19 +446,26 @@
                                                 name="voter_card" accept="image/*" required onchange="previewFile(this)">
                                         </div>
                                     </div> --}}
+
+                                    {{-- file-uploader livewire --}}
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
-                                        <div class="mb-30">
-                                            <img id="admission_letter_preview" src=""
-                                                alt="Admission Letter Preview"
-                                                style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="admission_letter">Admission Letter <span
-                                                    style="color: red;">*</span></label>
-                                            <input type="file" class="form-control form-control-sm"
-                                                id="admission_letter" name="admission_letter" accept="image/*" required
-                                                onchange="previewFile(this)">
-                                        </div>
+                                            <livewire:file-uploader inputName="admission_letter" />
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                            <livewire:file-uploader inputName="last_semester_result" />
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                            <livewire:file-uploader inputName="registration_receipt" />
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                            <livewire:file-uploader inputName="indigene_letter" />
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
+                                            <livewire:file-uploader inputName="passport_photo" />
+                                    </div>
+
+                                
+                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
                                             <img id="last_semester_result_preview" src=""
                                                 alt="Last Semester Result Preview"
@@ -494,15 +501,6 @@
                                                 onchange="previewFile(this)">
                                         </div>
                                     </div>
-                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
-                                        <div class="mb-30">
-                                            <img id="ssce_preview" src="" alt="SSCE Result Preview"
-                                                style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="ssce">SSCE Result <span style="color: red;">*</span></label>
-                                            <input type="file" class="form-control form-control-sm" id="ssce"
-                                                name="ssce" accept="image/*" required onchange="previewFile(this)">
-                                        </div>
-                                    </div> --}}
                                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
                                             <img id="passport_photo_preview" src="" alt="Passport Photo Preview"
@@ -513,16 +511,8 @@
                                                 id="passport_photo" name="passport_photo" accept="image/*" required
                                                 onchange="previewFile(this)">
                                         </div>
-                                    </div>
-                                    {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
-                                        <div class="mb-30">
-                                            <img id="signature_preview" src="" alt="Signature Preview"
-                                                style="width: 200px; height: 150px; object-fit: cover; margin-top: 10px; display: none;">
-                                            <label for="signature">Signature</label>
-                                            <input type="file" class="form-control form-control-sm" id="signature"
-                                                name="signature" accept="image/*" required onchange="previewFile(this)">
-                                        </div>
                                     </div> --}}
+
                                     <script>
                                         function previewFile(input) {
                                             var file = input.files[0];
