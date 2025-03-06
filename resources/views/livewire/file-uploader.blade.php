@@ -60,8 +60,13 @@ function handleProgress($progress) {
         @endif
     </div>
 
-    <label for="file-{{ $inputName }}">{{ ucfirst(str_replace('_', ' ', $inputName)) }} <span
-            style="color: red;">*</span></label>
+    <label for="file-{{ $inputName }}">{{ ucfirst(str_replace('_', ' ', $inputName)) }}  
+    @if ($inputName == 'last_semester_result')
+            (Optional)
+    @else
+        <span style="color: red;">*</span>
+    @endif
+    </label>
 
     <div class="d-flex">
         <input type="file" 
