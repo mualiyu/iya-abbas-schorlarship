@@ -37,7 +37,7 @@ class ScholarshipApplicationController extends Controller
 
             // 'voter_card' => 'nullable',
             'admission_letter' => 'required',
-            'last_semester_result' => 'required',
+            'last_semester_result' => 'nullable',
             'registration_receipt' => 'required',
             'indigene_letter' => 'required',
             // 'ssce' => 'required',
