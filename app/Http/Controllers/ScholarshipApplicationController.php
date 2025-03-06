@@ -20,7 +20,7 @@ class ScholarshipApplicationController extends Controller
             'gender' => 'required|in:male,female',
             'institution' => 'required|string|max:255',
             'institution_o' => 'nullable|string|max:255',
-            'registration_no' => 'required|string|max:255',
+            'registration_no' => 'required|string|max:255|unique:scholarship_applications,registration_no',
             'course_of_study' => 'required|string|max:255',
             'duration' => 'required|integer',
             'level' => 'required|string|max:255',
