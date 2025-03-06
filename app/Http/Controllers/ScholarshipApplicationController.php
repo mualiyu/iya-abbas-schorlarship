@@ -36,13 +36,13 @@ class ScholarshipApplicationController extends Controller
             'ward' => 'nullable|string|max:255',
 
             // 'voter_card' => 'nullable',
-            'admission_letter' => 'nullable',
-            'last_semester_result' => 'nullable',
-            'registration_receipt' => 'nullable',
-            'indigene_letter' => 'nullable',
-            // 'ssce' => 'nullable',
-            'passport_photo' => 'nullable',
-            // 'signature' => 'nullable',
+            'admission_letter' => 'required',
+            'last_semester_result' => 'required',
+            'registration_receipt' => 'required',
+            'indigene_letter' => 'required',
+            // 'ssce' => 'required',
+            'passport_photo' => 'required',
+            // 'signature' => 'required',
         ]);
 
         if ($validator->fails()) {
