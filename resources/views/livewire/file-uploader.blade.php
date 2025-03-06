@@ -49,7 +49,7 @@ $clearPath = function () {
         @else
             <div class="bg-gray-100 rounded flex items-center justify-center"
                  style="width: 200px; height: auto; border: 2px dashed #ddd;">
-                <p class="text-gray-400 px-2 py-2">No image for {{ ucfirst(str_replace('_', ' ', $inputName)) }}</p>
+                <p class="text-gray-400 px-2 py-2">No file for {{ ucfirst(str_replace('_', ' ', $inputName)) }}</p>
             </div>
         @endif
     </div>
