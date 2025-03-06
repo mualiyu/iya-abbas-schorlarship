@@ -436,6 +436,7 @@
                                     <!-- File uploads -->
                                     <div class="col-12">
                                         <h4 class="mb-3 mt-4">Required Documents</h4>
+                                        <p class="text-red mb-3" style="color: red;">Note: Maximum file size allowed is 500KB per document. Please make sure to click Save for each uploaded document.</p>
                                     </div>
                                     {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">

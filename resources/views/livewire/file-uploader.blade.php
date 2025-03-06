@@ -9,6 +9,7 @@ state([
     'file' => null,
     'uploadedPath' => '',
     'inputName' => '',
+    'progress' => null
 ]);
 
 mount(function ($inputName) {
@@ -21,7 +22,7 @@ function updatedFile() {
 
 $save = function () {
     $this->validate([
-        'file' => 'required|mimes:png,jpg,jpeg|max:1024',
+        'file' => 'required|mimes:png,jpg,jpeg|max:524',
     ]);
 
     $path = $this->file->store('public/applications');
@@ -37,6 +38,11 @@ $save = function () {
 $clearPath = function () {
     $this->uploadedPath = "";
 };
+
+#[On('upload-progress')]
+function handleProgress($progress) {
+    $this->progress = $progress;
+}
 
 ?>
 
@@ -61,12 +67,27 @@ $clearPath = function () {
         <input type="file" 
                class="form-control form-control-sm" 
                wire:model="file"
-               {{-- wire:model.defer="file" --}}
+{{-- wire:model.defer="file" --}}
                id="file-{{ $inputName }}"
                wire:change="clearPath"
                accept="image/*" />
         <span style="cursor: pointer;" class="btn btn-primary btn-sm ms-2" wire:click="save">Save</span>
     </div>
+
+    <!-- Add progress bar -->
+    @if($progress)
+    <div class="mt-2">
+        <div class="progress" style="height: 3px;">
+            <div class="progress-bar" role="progressbar" 
+                 style="width: {{ $progress }}%;" 
+                 aria-valuenow="{{ $progress }}" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100"></div>
+        </div>
+        <div class="text-sm text-gray-500 mt-1">Uploading: {{ $progress }}%</div>
+    </div>
+    @endif
+
     <span style="color: green;">{{!empty($uploadedPath) ? "Saved":""}}</span>
 
     @if (!empty($uploadedPath))
