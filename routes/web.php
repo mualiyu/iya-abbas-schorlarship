@@ -12,7 +12,7 @@ Route::view('/', 'main.index')
 Route::view('/application', 'main.application')
     ->name('main.application');
 
-    // store method in ScholarshipApplicationController
+// store method in ScholarshipApplicationController
 Route::post('/application', 'App\Http\Controllers\ScholarshipApplicationController@store')->name("main.store.scholarship");
 
 Route::get('/admin', [HomeController::class, 'index'])
@@ -50,3 +50,17 @@ Route::get('storage/{p}/{filename}', function ($p, $filename)
 
     return $response;
 });
+
+// Main website routes
+Route::get('/about', [App\Http\Controllers\MainController::class, 'about'])->name('about');
+Route::get('/legislative', [App\Http\Controllers\MainController::class, 'legislative'])->name('legislative');
+Route::get('/news', [App\Http\Controllers\MainController::class, 'news'])->name('news');
+Route::get('/contact', [App\Http\Controllers\MainController::class, 'contact'])->name('contact');
+Route::get('/empowerment', [App\Http\Controllers\MainController::class, 'empowerment'])->name('empowerment');
+
+// Contact form submission
+Route::post('/contact', [App\Http\Controllers\MainController::class, 'submitContact'])->name('contact.submit');
+
+// Others routes (Test)
+// Route::get('/scholarships', [App\Http\Controllers\MainController::class, 'scholarships'])->name('scholarships');
+// Route::get('/', [App\Http\Controllers\MainController::class, 'index'])->name('home');
