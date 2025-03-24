@@ -34,6 +34,7 @@
         <link rel="stylesheet" href="{{asset('/assets/meanmenu.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/swiper-bundle.min.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/main.css')}}">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
         {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -174,6 +175,15 @@
         <!-- footer area end -->
 
 		<!-- JS here -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: { delay: 3000 },
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+            });
+        </script>
 
         <script src="{{asset('/assets/jquery.min.js')}}"></script>
         <script src="{{asset('/assets/bootstrap.bundle.min.js')}}"></script>

@@ -1,6 +1,12 @@
 @extends('layouts.main')
 
 @section('content')
+<section class="empowerment-header py-5" style="background-color: rgba(104,12,13,0.1);">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p class="lead">Get in torch with me</p>
+        </div>
+    </section>
     <section class="contact-area py-5">
         <div class="container">
             <div class="row">

@@ -15,7 +15,6 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="program-card">
-                            <img src="{{ asset('assets/programs/skills-training.jpg') }}" alt="Skills Training">
                             <h4>Skills Training</h4>
                             <p>Vocational and technical skills development...</p>
                         </div>

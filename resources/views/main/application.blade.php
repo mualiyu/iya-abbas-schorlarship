@@ -1,25 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-    <!-- breadcrumb area start -->
-    {{-- <section class="breadcrumb-area bg-default" data-background="assets/breadcrumb-bg.jpg">
-    <img src="assets/shape-1.png" alt="" class="breadcrumb-shape">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="breadcrumb-content">
-                    <h2 class="breadcrumb-title">Application</h2>
-                    <div class="breadcrumb-list">
-                        <a href="/">Home</a>
-                        <span>Application</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> --}}
-    <!-- breadcrumb area end -->
-
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
@@ -37,18 +18,76 @@
             {{ $errors->first() }}
         </div>
     @endif
-
+    <section class="news-header py-5" style="background-color: rgba(104,12,13,0.1);">
+        <div class="container">
+            <h1>Scholarships</h1>
+            <p class="lead">Supporting eduction through scholarships</p>
+        </div>
+    </section>
+    <div>&nbsp;</div>
+    <!-- admission area start -->
+    <section class="h3_admission-area pt-100 pb-90" >
+        <img src="/assets/1.png" alt="" class="h3_admission-bg">
+        <img src="/assets/shape-1.png" alt="" class="h3_admission-shape-1">
+        <img src="/assets/shape-3.png" alt="" class="h3_admission-shape-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 ">
+                    <div class="h3_admission-wrap mr-65 mb-50">
+                        <img src="/assets/3/shape-2.png" alt="" class="h3_admission-wrap-shape-2">
+                        <div class="section-area-3 mb-35 small-section-area-3">
+                            <span class="section-subtitle" style="color:rgb(123, 22, 23);">About the Scholarship</span>
+                            <h2 class="section-title mb-25">Empowering Future Leaders Through Education</h2>
+                            <p class="section-text">
+                                The <strong>Senator Aminu Iya Abbas Scholarship</strong> is a dedicated initiative to
+                                support students from the <strong>Adamawa Central Senatorial District</strong>.
+                                This scholarship provides financial assistance to Undergraduate:- Degree, ND, NCE, and HND students,
+                                ensuring they have the resources to excel in their academic journey.
+                            </p>
+                        </div>
+                        <div class="h3_admission-content mb-35">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <span><i class="fa-regular fa-check"></i>Available for Adamawa Central Students</span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span><i class="fa-regular fa-check"></i>Full & Partial Scholarships</span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span><i class="fa-regular fa-check"></i>Open to Undergraduates & ND/HND Students</span>
+                                </div>
+                                <div class="col-sm-12">
+                                    <span><i class="fa-regular fa-check"></i>No Application Fees</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="h3_admission-form mb-10">
+                        {{-- <h5 class="h3_admission-form-title">Admissions</h5> --}}
+                        
+                            <div class="p-0">
+                                <img src="{{ asset('/assets/main/preview.jpg') }}" alt="Application Form preview"
+                                    srcset="">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- admission area end -->
     <section class="h3_admission-area pt-100 pb-150">
         <img src="/assets/main/scholar.webp" alt="" class="h3_admission-bg pb-100">
         <img src="/assets/shape-1.png" alt="" class="h3_admission-shape-1">
         <img src="/assets/shape-3.png" alt="" class="h3_admission-shape-2">
         <div class="container">
             <div class="h3_admission-wrap mr-65 mb-10">
-                {{-- <img src="assets/img/admission/3/shape-2.png" alt="" class="h3_admission-wrap-shape-2"> --}}
-                <h2 class="breadcrumb-title" style="text-align: center;">Application</h2>
                 <div class="section-area-3 mb-10 small-section-area-3">
-                    <span class="section-subtitle" style="color:rgb(123, 22, 23);">Kindly Note The Following</span>
-                    <h2 class="section-title mb-1">USE BLOCK LETTERS THROUGHOUT!</h2>
+                    
+                    <h2 class="section-title mb-1">READY TO START YOUR APPLICATION?</h2>
+                    <span class="section-subtitle" style="color:rgb(123, 22, 23);">You must meet the following requirement to apply</span>
                     <p class="section-text mb-1">
                         1. An applicant must be unemployed.
                     </p>
@@ -61,24 +100,19 @@
                 </div>
                 <div class="h3_admission-content mb-10">
                     <div class="row">
-                        {{-- <div class="col-sm-6">
-                            <span><i class="fa-regular fa-check"></i>Voter card</span>
-                        </div> --}}
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <span><i class="fa-regular fa-check"></i>Photocopy of Admission letter</span>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <span><i class="fa-regular fa-check"></i>Last semester result showing CGPA</span>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <span><i class="fa-regular fa-check"></i>Recent Registration Receipt</span>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <span><i class="fa-regular fa-check"></i>Indigene letter</span>
                         </div>
-                        {{-- <div class="col-sm-6">
-                            <span><i class="fa-regular fa-check"></i>SSCE</span>
-                        </div> --}}
+
                     </div>
                 </div>
                 <div class="h3_admission-button">
@@ -110,12 +144,9 @@
                     </script>
                 </div>
             </div>
-            {{-- </div>
-            </div> --}}
         </div>
     </section>
-    <section class="h3_admission-area pt-50 pb-50">
-    </section>
+
 
     @if (config('app.application'))
     <!-- Application area start -->
