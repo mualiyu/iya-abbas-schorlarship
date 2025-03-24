@@ -6,9 +6,11 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Exports\\ApplicationsExport' => $baseDir . '/app/Exports/ApplicationsExport.php',
     'App\\Http\\Controllers\\Auth\\VerifyEmailController' => $baseDir . '/app/Http/Controllers/Auth/VerifyEmailController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
     'App\\Http\\Controllers\\ScholarshipApplicationController' => $baseDir . '/app/Http/Controllers/ScholarshipApplicationController.php',
     'App\\Livewire\\Actions\\Logout' => $baseDir . '/app/Livewire/Actions/Logout.php',
     'App\\Livewire\\Forms\\LoginForm' => $baseDir . '/app/Livewire/Forms/LoginForm.php',
@@ -1689,6 +1691,7 @@ return array(
     'Illuminate\\Database\\Capsule\\Manager' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Capsule/Manager.php',
     'Illuminate\\Database\\ClassMorphViolationException' => $vendorDir . '/laravel/framework/src/Illuminate/Database/ClassMorphViolationException.php',
     'Illuminate\\Database\\Concerns\\BuildsQueries' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php',
+    'Illuminate\\Database\\Concerns\\BuildsWhereDateClauses' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsWhereDateClauses.php',
     'Illuminate\\Database\\Concerns\\CompilesJsonPaths' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Concerns/CompilesJsonPaths.php',
     'Illuminate\\Database\\Concerns\\ExplainsQueries' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Concerns/ExplainsQueries.php',
     'Illuminate\\Database\\Concerns\\ManagesTransactions' => $vendorDir . '/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php',
@@ -2585,6 +2588,7 @@ return array(
     'Illuminate\\Validation\\Rules\\ImageFile' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php',
     'Illuminate\\Validation\\Rules\\In' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/In.php',
     'Illuminate\\Validation\\Rules\\NotIn' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/NotIn.php',
+    'Illuminate\\Validation\\Rules\\Numeric' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php',
     'Illuminate\\Validation\\Rules\\Password' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/Password.php',
     'Illuminate\\Validation\\Rules\\ProhibitedIf' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/ProhibitedIf.php',
     'Illuminate\\Validation\\Rules\\RequiredIf' => $vendorDir . '/laravel/framework/src/Illuminate/Validation/Rules/RequiredIf.php',
@@ -3940,6 +3944,7 @@ return array(
     'Override' => $vendorDir . '/symfony/polyfill-php83/Resources/stubs/Override.php',
     'PHPStan\\PhpDocParser\\Ast\\AbstractNodeVisitor' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/AbstractNodeVisitor.php',
     'PHPStan\\PhpDocParser\\Ast\\Attribute' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/Attribute.php',
+    'PHPStan\\PhpDocParser\\Ast\\Comment' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/Comment.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayItemNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayItemNode.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayNode.php',
     'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprFalseNode' => $vendorDir . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprFalseNode.php',

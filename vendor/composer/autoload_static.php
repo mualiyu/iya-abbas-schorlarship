@@ -222,9 +222,9 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         ),
         'phpDocumentor\\Reflection\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
         ),
         'ZipStream\\' => 
         array (
@@ -654,9 +654,11 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
     );
 
     public static $classMap = array (
+        'App\\Exports\\ApplicationsExport' => __DIR__ . '/../..' . '/app/Exports/ApplicationsExport.php',
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\ScholarshipApplicationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ScholarshipApplicationController.php',
         'App\\Livewire\\Actions\\Logout' => __DIR__ . '/../..' . '/app/Livewire/Actions/Logout.php',
         'App\\Livewire\\Forms\\LoginForm' => __DIR__ . '/../..' . '/app/Livewire/Forms/LoginForm.php',
@@ -2337,6 +2339,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'Illuminate\\Database\\Capsule\\Manager' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Capsule/Manager.php',
         'Illuminate\\Database\\ClassMorphViolationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/ClassMorphViolationException.php',
         'Illuminate\\Database\\Concerns\\BuildsQueries' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php',
+        'Illuminate\\Database\\Concerns\\BuildsWhereDateClauses' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/BuildsWhereDateClauses.php',
         'Illuminate\\Database\\Concerns\\CompilesJsonPaths' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/CompilesJsonPaths.php',
         'Illuminate\\Database\\Concerns\\ExplainsQueries' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ExplainsQueries.php',
         'Illuminate\\Database\\Concerns\\ManagesTransactions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Database/Concerns/ManagesTransactions.php',
@@ -3233,6 +3236,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'Illuminate\\Validation\\Rules\\ImageFile' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/ImageFile.php',
         'Illuminate\\Validation\\Rules\\In' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/In.php',
         'Illuminate\\Validation\\Rules\\NotIn' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/NotIn.php',
+        'Illuminate\\Validation\\Rules\\Numeric' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Numeric.php',
         'Illuminate\\Validation\\Rules\\Password' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/Password.php',
         'Illuminate\\Validation\\Rules\\ProhibitedIf' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/ProhibitedIf.php',
         'Illuminate\\Validation\\Rules\\RequiredIf' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Validation/Rules/RequiredIf.php',
@@ -4588,6 +4592,7 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'Override' => __DIR__ . '/..' . '/symfony/polyfill-php83/Resources/stubs/Override.php',
         'PHPStan\\PhpDocParser\\Ast\\AbstractNodeVisitor' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/AbstractNodeVisitor.php',
         'PHPStan\\PhpDocParser\\Ast\\Attribute' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/Attribute.php',
+        'PHPStan\\PhpDocParser\\Ast\\Comment' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/Comment.php',
         'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayItemNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayItemNode.php',
         'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprArrayNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprArrayNode.php',
         'PHPStan\\PhpDocParser\\Ast\\ConstExpr\\ConstExprFalseNode' => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src/Ast/ConstExpr/ConstExprFalseNode.php',

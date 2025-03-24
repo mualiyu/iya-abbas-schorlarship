@@ -125,6 +125,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-md-12">
                         <div class="contact-content pr-80 mb-20">
+
                             <h3 class="contact-title mb-25">Scholarship Application Form</h3>
                             <form action="{{ route('main.store.scholarship') }}" method="POST" class="contact-form"
                                 enctype="multipart/form-data">
@@ -317,7 +318,7 @@
                                             <label for="account_number">Account Number <span
                                                     style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="account_number"
-                                                name="account_number" value="{{ old('account_number') }}" required>
+                                                name="account_number" value="{{ old('account_number') }}" maxlength="10" required>
                                             @error('account_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror

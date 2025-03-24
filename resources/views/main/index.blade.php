@@ -87,7 +87,7 @@
                             <p class="section-text">
                                 The <strong>Senator Aminu Iya Abbas Scholarship</strong> is a dedicated initiative to
                                 support students from the <strong>Adamawa Central Senatorial District</strong>.
-                                This scholarship provides financial assistance to Undergraduate, ND, NCE, and HND students,
+                                This scholarship provides financial assistance to Undergraduate:- Degree, ND, NCE, and HND students,
                                 ensuring they have the resources to excel in their academic journey.
                             </p>
                         </div>

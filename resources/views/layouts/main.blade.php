@@ -9,7 +9,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('/assets/main/logo.png')}}">
         <!-- Place favicon.ico in the root directory -->
-
+        <style>
+            .menu-item{
+                border-radius: 5px;
+                
+            }
+            .menu-item a{
+                text-decoration: none;
+                font-size: medium;
+                padding-left:20px;
+                padding-right:20px;
+                color: white;
+                
+               
+            }
+        </style>
 		<!-- CSS here -->
         <link rel="stylesheet" href="{{asset('/assets/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/animate.min.css')}}">
@@ -31,13 +45,14 @@
      
     <body>
        <!-- sidebar-information-area-start -->
-        {{-- <div class="sidebar-info side-info">
+        <div class="sidebar-info side-info">
             <div class="sidebar-logo-wrapper mb-25">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-8">
                         <div class="sidebar-logo">
                             <a href="/" style="font-size: 20px; color:white; text-decoration: none;" >Senator Aminu Iya Abbas</a>
                         </div>
+                        
                     </div>
                     <div class="col-xl-6 col-4">
                         <div class="sidebar-close-wrapper text-end">
@@ -47,9 +62,21 @@
                 </div>
             </div>
             <div class="sidebar-menu-wrapper fix">
-                <div class="mobile-menu"></div>
+                <div class="mobile-menu">
+                
+                        <ul class="flex space-x-12 text-xl">
+                            <li><a href="/" class="hover:text-gray-300 transition">Home</a></li>
+                            <li><a href="/legislative" class="hover:text-gray-300 transition">Legislative Work</a></li>
+                            <li><a href="/empowerment" class="hover:text-gray-300 transition">Empowerment</a></li>
+                            <li><a href="/application" class="hover:text-gray-300 transition">Scholarships</a></li>
+                            <li><a href="/news" class="hover:text-gray-300 transition">News</a></li>
+                            <li><a href="/about" class="hover:text-gray-300 transition">About</a></li>
+                            <li><a href="/contact" class="hover:text-gray-300 transition">Contact</a></li>
+                        </ul>
+                   
+                </div>
             </div>
-        </div> --}}
+        </div>
         <div class="offcanvas-overlay"></div>
         <!-- sidebar-information-area-end -->
 
@@ -60,45 +87,46 @@
                     <div class="row align-items-center">
                         <div class="col-xl-3 col-sm-7 col-12">
                             <div class="h3_header-logo">
-                                <a href="/" style="font-size: 20px; color:black; text-decoration: none; ">
-                                    <img src="{{asset('/assets/main/logo.png')}}" alt="logo" style="width: 65px; height: 65px;">
-                                    {{-- <span class="font-size-5"> Senator Iya Abbas</span> --}}
-                                    <span class="font-size-5"> Senator Aminu Iya Abbas</span>
+                                <a href="/" style="font-size: 20px; color:black; text-decoration: none;">
+                                    <img src="{{ asset('/assets/main/logo.png') }}" alt="logo" style="width: 65px; height: 65px; padding: 10px;">
+                                    <span class="font-size-10">Senator Aminu Iya Abbas</span>
                                 </a>
                             </div>
                         </div>
                         <div class="col-xl-7 d-none d-xl-block">
                             <div class="h3_header-middle">
-                                <nav class="h3_main-menu mobile-menu" id="mobile-menu">
-                                    <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li><a href="/about">About</a></li>
-                                        <li><a href="/legislative">Legislative Work</a></li>
-                                        <li><a href="/news">News</a></li>
-                                        <li><a href="/empowerment">Empowerment</a></li>
-                                        <li><a href="/contact">Contact</a></li>
+                                <nav class="h3_main-menu" id="desktop-menu">
+                                    <ul class="flex space-x-12 text-xl">
+                                        <li><a href="/" class="hover:text-gray-300 transition">Home</a></li>
+                                        <li><a href="/legislative" class="hover:text-gray-300 transition">Legislative Work</a></li>
+                                        <li><a href="/empowerment" class="hover:text-gray-300 transition">Empowerment</a></li>
+                                        <li><a href="/application" class="hover:text-gray-300 transition">Scholarships</a></li>
+                                        <li><a href="/news" class="hover:text-gray-300 transition">News</a></li>
+                                        <li><a href="/about" class="hover:text-gray-300 transition">About</a></li>
+                                        <li><a href="/contact" class="hover:text-gray-300 transition">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-5 col-6">
                             <div class="h3_header-right">
-                                <div class="h3_header-btn d-none d-sm-block">
-                                    <a href="/application" class="header-btn theme-btn theme-btn-medium theme-btn-3" style="text-decoration: none; background-color:rgb(104,12,13);">Apply for Scholarship Now<i class="fa-light fa-arrow-up-right"></i></a>
-                                </div>
-                                {{-- <div class="header-menu-bar d-xl-none ml-10">
-                                    <span class="header-menu-bar-icon side-toggle">
-                                        <i class="fa-light fa-bars"></i>
+                                <!-- Mobile Menu Toggle Button -->
+                                <div class="header-menu-bar d-xl-none ml-10">
+                                    <span class="header-menu-bar-icon side-toggle" id="menu-toggle">
+                                        <i class="fa-light fa-bars text-3xl cursor-pointer"></i>
                                     </span>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
+          
         </header>
-        <!-- header area end -->
-
+        
+        
+      
         <main>
             
             @yield('content')
@@ -106,18 +134,19 @@
         </main>
 
         <!-- footer area start -->
-        <!-- <footer class="footer-area h3_footer-area">
-            <div class="footer-top pt-240 pb-55">
+        <footer class="footer-area h4_footer-area">
+            <div class="footer-top pt-50 pb-35">
                 <div class="container">
                    <div class="row justify-content-between">
                         <div class="col-xl-3 col-lg-7 col-md-7 col-sm-12">
                             <div class="footer-widget mb-40">
-                                <div class="footer-logo">
-                                    <a href="index.html"><img src="assets/img/logo/logo-white.png" alt=""></a>
-                                </div>
+                                <!-- <div class="footer-logo">
+                                    <a href="index.html"><img src="{{ asset('/assets/main/logo.png') }}" alt=""></a>
+                                </div> -->
                                 <p class="footer-widget-text mb-35">
-                                    Through a combination of lectures, readings, discussions, students will gain solid foundation in educational.
+                                  Follow me on social media for more ...
                                 </p>
+               
                                 <div class="footer-social">
                                     <ul>
                                         <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
@@ -135,16 +164,17 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="copyright-text">
-                                <p>Copyright © 2025 All Rights Reserved by Iya Abbas</p>
+                                <p>Copyright © 2025 All Rights Reserved | Sanator Aminu Iya Abbas</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer> -->
+        </footer>
         <!-- footer area end -->
 
 		<!-- JS here -->
+
         <script src="{{asset('/assets/jquery.min.js')}}"></script>
         <script src="{{asset('/assets/bootstrap.bundle.min.js')}}"></script>
         <script src="{{asset('/assets/swiper-bundle.min.js')}}"></script>
