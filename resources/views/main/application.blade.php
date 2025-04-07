@@ -54,7 +54,7 @@
                                     <span><i class="fa-regular fa-check"></i>Full & Partial Scholarships</span>
                                 </div>
                                 <div class="col-sm-12">
-                                    <span><i class="fa-regular fa-check"></i>Open to Undergraduates & ND/HND Students</span>
+                                    <span><i class="fa-regular fa-check"></i>Open to Undergraduate: Degree, ND, NCE, and HND students</span>
                                 </div>
                                 <div class="col-sm-12">
                                     <span><i class="fa-regular fa-check"></i>No Application Fees</span>

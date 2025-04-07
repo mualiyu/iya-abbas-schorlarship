@@ -9,21 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="{{asset('/assets/main/logo.png')}}">
         <!-- Place favicon.ico in the root directory -->
-        <style>
-            .menu-item{
-                border-radius: 5px;
-                
-            }
-            .menu-item a{
-                text-decoration: none;
-                font-size: medium;
-                padding-left:20px;
-                padding-right:20px;
-                color: white;
-                
-               
-            }
-        </style>
+
 		<!-- CSS here -->
         <link rel="stylesheet" href="{{asset('/assets/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/animate.min.css')}}">
@@ -46,12 +32,12 @@
      
     <body>
        <!-- sidebar-information-area-start -->
-        <div class="sidebar-info side-info">
+        <div class="sidebar-info side-info" style="background-color: aliceblue;">
             <div class="sidebar-logo-wrapper mb-25">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-8">
                         <div class="sidebar-logo">
-                            <a href="/" style="font-size: 20px; color:white; text-decoration: none;" >Senator Aminu Iya Abbas</a>
+                            <a href="/" style="font-size: 20px; color:rgb(24, 9, 85); text-decoration: none;" >Senator Aminu Iya Abbas</a>
                         </div>
                         
                     </div>
