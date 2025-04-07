@@ -50,7 +50,6 @@
             </div>
             <div class="sidebar-menu-wrapper fix">
                 <div class="mobile-menu">
-                
                         <ul class="flex space-x-12 text-xl">
                             <li><a href="/" class="hover:text-gray-300 transition">Home</a></li>
                             <li><a href="/legislative" class="hover:text-gray-300 transition">Legislative Work</a></li>
