@@ -29,7 +29,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
-     
+
     <body>
        <!-- sidebar-information-area-start -->
         <div class="sidebar-info side-info" style="background-color: aliceblue;">
@@ -39,7 +39,7 @@
                         <div class="sidebar-logo">
                             <a href="/" style="font-size: 20px; color:rgb(24, 9, 85); text-decoration: none;" >Senator Aminu Iya Abbas</a>
                         </div>
-                        
+
                     </div>
                     <div class="col-xl-6 col-4">
                         <div class="sidebar-close-wrapper text-end">
@@ -59,7 +59,7 @@
                             <li><a href="/about" class="hover:text-gray-300 transition">About</a></li>
                             <li><a href="/contact" class="hover:text-gray-300 transition">Contact</a></li>
                         </ul>
-                   
+
                 </div>
             </div>
         </div>
@@ -67,24 +67,25 @@
         <!-- sidebar-information-area-end -->
 
         <!-- header area start -->
-        <header> 
+        <header>
             <div class="h3_header-area header-sticky">
                 <div class="container-fluid">
-                    <div class="row align-items-center">
-                        <div class="col-xl-3 col-sm-7 col-12">
+                    <div class="row align-items-center flex flex-row">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 ">
                             <div class="h3_header-logo">
-                                <a href="/" style="font-size: 20px; color:black; text-decoration: none;">
-                                    <img src="{{ asset('/assets/main/logo.png') }}" alt="logo" style="width: 65px; height: 65px; padding: 10px;">
-                                    <span class="font-size-10">Senator Aminu Iya Abbas</span>
+                                <a href="/" style="font-size: 18px; color:black; text-decoration: none;">
+                                    <img src="{{ asset('/assets/main/logo.png') }}" alt="logo" class="d-inline-block" style="width: 45px; height: 45px; padding: 5px;">
+                                    <span class="font-size-20">Senator <span class="d-none d-sm-none">Aminu</span> Iya Abbas</span>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-7 d-none d-xl-block">
+                        <div class="col-xl-8 col-lg-8 col-md-8 d-none d-xl-block">
                             <div class="h3_header-middle">
                                 <nav class="h3_main-menu" id="desktop-menu">
-                                    <ul class="flex space-x-12 text-xl">
+                                    <ul class="flex space-x-1 space-md-x-2 space-lg-x-3 space-xl-x-5 text-sm text-md-base text-lg-lg">
                                         <li><a href="/" class="hover:text-gray-300 transition">Home</a></li>
                                         <li><a href="/legislative" class="hover:text-gray-300 transition">Legislative Work</a></li>
+                                        <li><a href="/legislative" class="hover:text-gray-300 transition">Legislative</a></li>
                                         <li><a href="/empowerment" class="hover:text-gray-300 transition">Empowerment</a></li>
                                         <li><a href="/application" class="hover:text-gray-300 transition">Scholarships</a></li>
                                         <li><a href="/news" class="hover:text-gray-300 transition">News</a></li>
@@ -94,10 +95,10 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-xl-2 col-sm-5 col-6">
+                        <div class="col-xl-1 col-lg-1 col-md-1 col-sm-2 ">
                             <div class="h3_header-right">
                                 <!-- Mobile Menu Toggle Button -->
-                                <div class="header-menu-bar d-xl-none ml-10">
+                                <div class="header-menu-bar d-xl-none">
                                     <span class="header-menu-bar-icon side-toggle" id="menu-toggle">
                                         <i class="fa-light fa-bars text-3xl cursor-pointer"></i>
                                     </span>
@@ -107,14 +108,14 @@
                     </div>
                 </div>
             </div>
-        
-          
+
+
         </header>
-        
-        
-      
+
+
+
         <main>
-            
+
             @yield('content')
 
         </main>
@@ -132,12 +133,12 @@
                                 <p class="footer-widget-text mb-35">
                                   Follow me on social media for more ...
                                 </p>
-               
+
                                 <div class="footer-social">
                                     <ul>
-                                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        {{-- <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li> --}}
+                                        <li><a href="https://www.facebook.com/share/16yqND5VR1/" target="__blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        {{-- <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li> --}}
                                     </ul>
                                 </div>
                             </div>

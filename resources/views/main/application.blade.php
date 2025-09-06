@@ -18,14 +18,23 @@
             {{ $errors->first() }}
         </div>
     @endif
-    <section class="news-header py-5" style="background-color: rgba(104,12,13,0.1);">
+    {{-- <section class="news-header py-5" style="background-color: rgba(104,12,13,0.1);">
         <div class="container">
             <h1>Scholarships</h1>
             <p class="lead">Supporting eduction through scholarships</p>
         </div>
-    </section>
-    <div>&nbsp;</div>
+    </section> --}}
+    {{-- <div>&nbsp;</div> --}}
     <!-- admission area start -->
+@if (!config('app.application'))
+<section class="mt-2">
+    <div class="text-red-600">
+        <marquee behavior="scroll" direction="left" class="text-red-900 text-lg font-bold bg-red-50 p-2 border border-red-200" style="color: red; font-size:20px;">
+            Scholarship Application Will Be Open Soon! Keep checking this page for updates on when applications will be available.
+        </marquee>
+    </div>
+</section>
+@endif
     <section class="h3_admission-area pt-100 pb-90" >
         <img src="/assets/1.png" alt="" class="h3_admission-bg">
         <img src="/assets/shape-1.png" alt="" class="h3_admission-shape-1">
@@ -61,13 +70,13 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="h3_admission-form mb-10">
                         {{-- <h5 class="h3_admission-form-title">Admissions</h5> --}}
-                        
+
                             <div class="p-0">
                                 <img src="{{ asset('/assets/main/preview.jpg') }}" alt="Application Form preview"
                                     srcset="">
@@ -85,7 +94,7 @@
         <div class="container">
             <div class="h3_admission-wrap mr-65 mb-10">
                 <div class="section-area-3 mb-10 small-section-area-3">
-                    
+
                     <h2 class="section-title mb-1">READY TO START YOUR APPLICATION?</h2>
                     <span class="section-subtitle" style="color:rgb(123, 22, 23);">You must meet the following requirement to apply</span>
                     <p class="section-text mb-1">
@@ -117,6 +126,8 @@
                 </div>
                 <div class="h3_admission-button">
                     {{-- <a href="#" class="theme-btn theme-btn-medium theme-btn-3">Apply Now<i class="fa-light fa-arrow-up-right"></i></a> --}}
+
+                    @if (config('app.application'))
                     <div class="form-check mt-3">
                         <input class="form-check-input" type="checkbox" id="agreement"
                             {{ config('app.application') ? '' : 'disabled' }} required>
@@ -131,6 +142,19 @@
                             Continue
                         </button>
                     </div>
+                    @else
+                    <div class="alert text-center p-4 rounded-lg w-50">
+                        <div class="mb-3">
+                            {{-- <i class="fa-solid fa-clock text-yellow-600 text-3xl"></i> --}}
+                        </div>
+                        <h4 class="text-yellow-800 font-bold mb-2">Application Not Open Yet</h4>
+                        <p class="text-yellow-700 mb-0">
+                            Scholarship applications are currently closed. Please keep checking this page for when the applications is available.
+                        </p>
+                    </div>
+                    @endif
+
+
 
                     <script>
                         function showApplicationSection() {
@@ -349,7 +373,9 @@
                                             <label for="account_number">Account Number <span
                                                     style="color: red;">*</span></label>
                                             <input class="form-control" type="number" id="account_number"
-                                                name="account_number" value="{{ old('account_number') }}" maxlength="10" required>
+                                                name="account_number" value="{{ old('account_number') }}" required
+                                                pattern="[0-9]{10}" maxlength="10" minlength="10"
+                                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)">
                                             @error('account_number')
                                                 <span class="text-danger">{{ $message }}</span>
                                             @enderror
@@ -503,7 +529,7 @@
                                             <livewire:file-uploader inputName="passport_photo" />
                                     </div>
 
-                                
+
                                     {{-- <div class="col-xl-6 col-lg-6 col-md-12 col-sm-6">
                                         <div class="mb-30">
                                             <img id="last_semester_result_preview" src=""

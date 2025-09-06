@@ -26,9 +26,9 @@
                         <div class="social-links mt-4">
                             <h4>Social Media</h4>
                             <div class="social-icons">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                {{-- <a href="#"><i class="fab fa-twitter"></i></a> --}}
                                 <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                {{-- <a href="#"><i class="fab fa-instagram"></i></a> --}}
                             </div>
                         </div>
                     </div>

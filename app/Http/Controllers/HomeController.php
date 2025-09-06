@@ -9,7 +9,7 @@ use ZipArchive;
 
 class HomeController extends Controller
 {
-    public function index() 
+    public function index()
     {
         $scholarshipApplications = ScholarshipApplication::latest()->paginate(10);
 
@@ -48,7 +48,7 @@ class HomeController extends Controller
         $hasFiles = false;
         foreach ($applications as $file) {
             $baseFolder = $file->gender . '/' . $file->institution . '/' . $file->name;
-            
+
             $documents = [
                 'admission_' => $file->admission_letter,
                 'semester_' => $file->last_semester_result,

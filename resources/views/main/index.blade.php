@@ -27,6 +27,16 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
+
+@if (!config('app.application'))
+<section class="mt-6">
+    <div class="text-red-600">
+        <marquee behavior="scroll" direction="left" class="text-red-900 text-lg font-bold bg-red-50 p-2 border border-red-200 rounded" style="color: red; font-size:20px;">
+            Scholarship Application Will Be Open Soon! Keep checking this page for updates on when applications will be available.
+        </marquee>
+    </div>
+</section>
+@endif
 <section class="h3_space-area pt-30 pb-50">
 <div class="section-area-3 mb-35 small-section-area-3 justify-center">
     <h2 class="section-title mb-20 "></h2>
